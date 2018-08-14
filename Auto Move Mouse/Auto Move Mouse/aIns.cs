@@ -15,7 +15,9 @@ namespace Auto_Move_Mouse
 {
     public partial class aIns : Form
     {
-        private const int CONST_TIMER_INTERVAL = 1000;
+        private const int CONST_TIMER_INTERVAL = 1000 * 15;
+        private const int CONST_FORM_OFFSET_X = 5;
+        private const int CONST_FORM_OFFSET_Y = 5;
         private const int CONST_MOUSE_MOVE_OFFSET = 1;
 
         private System.Windows.Forms.Timer CheckTimer = null;
@@ -32,7 +34,7 @@ namespace Auto_Move_Mouse
             try
             {
                 this.StartPosition = FormStartPosition.Manual;
-                this.Location = new Point(15, 15);
+                this.Location = new Point(CONST_FORM_OFFSET_X, CONST_FORM_OFFSET_Y);
 #if RELEASE_MODE
                 this.DebugLabel.Visible = false;
 #else
@@ -41,6 +43,7 @@ namespace Auto_Move_Mouse
             }
             catch (System.Exception ex)
             {
+                COMMON.Message.ExceptionMsgBox("aIns_Load", ex.Message);
             }
         }
         private void aIns_Shown(object sender, EventArgs e)
@@ -51,6 +54,7 @@ namespace Auto_Move_Mouse
             }
             catch (System.Exception ex)
             {
+                COMMON.Message.ExceptionMsgBox("aIns_Shown", ex.Message);
             }
         }
 
@@ -61,6 +65,7 @@ namespace Auto_Move_Mouse
             }
             catch (System.Exception ex)
             {
+                COMMON.Message.ExceptionMsgBox("aIns_FormClosing", ex.Message);
             }
         }
         private void aIns_FormClosed(object sender, FormClosedEventArgs e)
@@ -70,6 +75,7 @@ namespace Auto_Move_Mouse
             }
             catch (System.Exception ex)
             {
+                COMMON.Message.ExceptionMsgBox("aIns_FormClosed", ex.Message);
             }
         }
 
@@ -104,6 +110,7 @@ namespace Auto_Move_Mouse
             }
             catch (System.Exception ex)
             {
+                COMMON.Message.ExceptionMsgBox("AlwaysCheckBox_CheckedChanged", ex.Message);
             }
         }
 
@@ -153,7 +160,19 @@ namespace Auto_Move_Mouse
             }
             catch (System.Exception ex)
             {
+                COMMON.Message.ExceptionMsgBox("OperatingTimer_Tick", ex.Message);
             }
         }
     }
 }
+
+
+/*
+            try
+            {
+            }
+            catch (System.Exception ex)
+            {
+                COMMON.Message.ExceptionMsgBox("", ex.Message);
+            }
+*/

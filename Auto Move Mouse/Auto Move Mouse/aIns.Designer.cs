@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aIns));
             this.AlwaysCheckBox = new System.Windows.Forms.CheckBox();
             this.DebugLabel = new System.Windows.Forms.Label();
             this.OperatingTimer = new System.Windows.Forms.Timer(this.components);
@@ -41,9 +42,9 @@
             this.AlwaysCheckBox.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.AlwaysCheckBox.Location = new System.Drawing.Point(12, 12);
             this.AlwaysCheckBox.Name = "AlwaysCheckBox";
-            this.AlwaysCheckBox.Size = new System.Drawing.Size(122, 16);
+            this.AlwaysCheckBox.Size = new System.Drawing.Size(95, 16);
             this.AlwaysCheckBox.TabIndex = 0;
-            this.AlwaysCheckBox.Text = "&Always Enable";
+            this.AlwaysCheckBox.Text = "&Always On";
             this.AlwaysCheckBox.UseVisualStyleBackColor = true;
             this.AlwaysCheckBox.CheckedChanged += new System.EventHandler(this.AlwaysCheckBox_CheckedChanged);
             // 
@@ -65,10 +66,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(149, 46);
+            this.ClientSize = new System.Drawing.Size(134, 46);
             this.Controls.Add(this.DebugLabel);
             this.Controls.Add(this.AlwaysCheckBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "aIns";
